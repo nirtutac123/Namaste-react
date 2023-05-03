@@ -1,0 +1,14 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is a live lesson",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Niruta Chapagain",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
