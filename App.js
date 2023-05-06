@@ -188,59 +188,178 @@ const restrauList = [
     },
     subtype: "basic",
   },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "542447",
+      name: "Wellfed Foods",
+      uuid: "e70066ce-c537-4c17-9256-f9dedf670d07",
+      city: "22",
+      area: "Ballupur",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "i2qzyeyfut60ioehrq12",
+      cuisines: ["Indian", "Beverages"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 37,
+      minDeliveryTime: 37,
+      maxDeliveryTime: 37,
+      slaString: "37 MINS",
+      lastMileTravel: 4.199999809265137,
+      slugs: {
+        restaurant: "wellfed-tiffin-ballupur-ballupur",
+        city: "dehradun",
+      },
+      cityState: "22",
+      address:
+        "41/2, General Mahadev Singh Rd, Vivek Vihar Pocket 1, Balliwala Chowk, Vivek Vihar - 3, Dehradun, Uttarakhand 248001, India",
+      locality: "General Mahadev Singh Road",
+      parentId: 326041,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      aggregatedDiscountInfo: {
+        header: "20% off",
+        shortDescriptionList: [
+          {
+            meta: "20% off | Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      aggregatedDiscountInfoV2: {
+        header: "20% OFF",
+        shortDescriptionList: [
+          {
+            meta: "Use TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        descriptionList: [
+          {
+            meta: "20% off up to ₹50 | Use code TRYNEW",
+            discountType: "Percentage",
+            operationType: "RESTAURANT",
+          },
+        ],
+        subHeader: "",
+        headerType: 0,
+        superFreedel: "",
+      },
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2400,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2400,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2400",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "cid=6566743~p=4~eid=00000187-eeed-4116-2ca5-77c4004b0444",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "4.1 kms",
+      hasSurge: false,
+      sla: {
+        restaurantId: "542447",
+        deliveryTime: 37,
+        minDeliveryTime: 37,
+        maxDeliveryTime: 37,
+        lastMileTravel: 4.199999809265137,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.0",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
 ];
 //Optional Chaining
 //body
-const RestaurantCard = () => {
-  const burgerKing = {
-    name: "Burger King",
-    image:
-      "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350",
-    cusines: ["American", "Fast Food"],
-    rating: 4.2,
-  };
+const RestaurantCard = ({
+  name,
+  cuisines,
+  cloudinaryImageId,
+  lastMileTravelString,
+}) => {
   return (
     <div className="card">
       <img
         src={
           "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          restrauList[0].data?.cloudinaryImageId
+          cloudinaryImageId
         }
       />
-      <h2>{restrauList[0].data?.name}</h2>
-      <h3>{restrauList[0].data?.cuisines.join(",")}</h3>
-      <h4>{restrauList[0].lastMileTravelString} minutes</h4>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(",")}</h3>
+      <h4>{lastMileTravelString} minutes</h4>
     </div>
   );
 };
 //kx2ghnwagcnqjtmd5jbc
+//props-properties
 const Body = () => {
   return (
     <div className="resturant-list">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-
-      <RestaurantCard />
-      <RestaurantCard />
-
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      {restrauList.map((restaurant) => {
+        return <RestaurantCard {...restrauList[0].data} />;
+      })}
     </div>
   );
 };
