@@ -3,19 +3,16 @@ const Title = () => (
     <img
       className="logo"
       alt="logo"
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHFEw0UHfi9LSK0QK5Dnh42SHlRezOZbFDQskXAxs&s"
-    ></img>
-    //{" "}
-    <h1 id="Title" key="h2">
-      // Food Villa //{" "}
-    </h1>
+      src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
+    />
   </a>
 );
 
-export const Header = () => {
+const Header = () => {
   return (
     <div className="header">
       <Title />
+
       <div className="nav-items">
         <ul>
           <li>Home</li>

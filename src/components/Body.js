@@ -1,9 +1,11 @@
 import { restaurantList } from "./constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
-//What is state
-//What is Hooks
-//What is usestate
+
+// What is state
+// what is React Hooks? - functions,
+// What is useState
+
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
     restaurant.data.name.includes(searchText)
@@ -13,7 +15,7 @@ function filterData(searchText, restaurants) {
 }
 
 const Body = () => {
-  const [restaurants, setRestaurants] = useState(restaurantList); //   let searchTxt = "KFC";   // SearchText is a local variable  //   const [searchClicked, setSearchClicked] = useState("false"); //   const [searchInput, setSearchInput] = useState(""); //To create state variable
+  const [restaurants, setRestaurants] = useState(restaurantList);
   const [searchText, setSearchText] = useState("");
 
   return (
@@ -27,24 +29,24 @@ const Body = () => {
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
-        />{" "}
-        {/* <h1>{searchClicked}</h1> */}
+        />
         <button
-          className="search_btn"
+          className="search-btn"
           onClick={() => {
-            //need to filter the data    // update the state - restaurants
-            const data = filterData(searchText, restaurants); //update the state - restaurants
+            //need to filter the data
+            const data = filterData(searchText, restaurants);
+            // update the state - restaurants
             setRestaurants(data);
           }}
         >
-          {/* {" "} */}
           Search
-          {/* - {searchInput} */}
         </button>
       </div>
-      <div className="resturant-list">
+      <div className="restaurant-list">
         {restaurants.map((restaurant) => {
-          return <RestaurantCard {...restaurantList[0].data} />;
+          return (
+            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+          );
         })}
       </div>
     </>
