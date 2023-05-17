@@ -1,22 +1,20 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between ;
     margin: 10px;
     border: 1px solid black;
-
 }
 
-.nav-items >ul {
+.nav-items > ul{
     list-style-type: none;
     display: flex;
-
 }
 
-.nav-items >ul > li {
-    display: flex;
+.nav-items > ul > li {
     padding: 10px;
 }
-.logo{
+
+.logo {
     width: 100px;
 }
 
@@ -31,10 +29,18 @@
     width: 100%;
 }
 
-.resturant-list{
+.restaurant-list {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
-/* body {
-    background-color: brown;
-} */
+
+.shimmer-card {
+    width: 200px;
+    height: 200px;
+    background: lightgrey;
+    margin: 20px;
+}
+
+.menu {
+    display: flex;
+}
